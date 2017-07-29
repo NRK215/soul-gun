@@ -451,8 +451,8 @@ GameObject:
   m_Component:
   - component: {fileID: 455918563}
   - component: {fileID: 455918562}
-  - component: {fileID: 455918564}
   - component: {fileID: 455918565}
+  - component: {fileID: 455918564}
   - component: {fileID: 455918566}
   m_Layer: 0
   m_Name: Player
@@ -493,8 +493,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0c3ed3305eba9ae4bb10682c7c0646e7, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: c9389a0828997b54e8ab59c1e8da2d46, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -527,17 +527,17 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.7853982
+  m_Mass: 2.7556
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_GravityScale: 7
+  m_Material: {fileID: 6200000, guid: d135536b519bcd24b9d90b69e8eeddc7, type: 2}
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!58 &455918565
-CircleCollider2D:
+--- !u!61 &455918565
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -549,8 +549,18 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.66, y: 1.66}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 1.66, y: 1.66}
+  m_EdgeRadius: 0
 --- !u!114 &455918566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -562,7 +572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a999d756622f41940b4a849f74643169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _horizontalForce: 3
+  _horizontalForce: 15
 --- !u!1 &995673972
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,7 +709,7 @@ Rigidbody2D:
   m_Mass: 0.7853982
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 1
   m_SleepingMode: 1
@@ -981,7 +991,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc6443430fd65e4ca88d6d9af5c8fa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GravityForce: 0.81
+  Input:
+    MoveLeft:
+      DefaultKey: 97
+      AltKey: 276
+    MoveRight:
+      DefaultKey: 100
+      AltKey: 275
+    Shoot:
+      DefaultKey: 32
+      AltKey: 306
 --- !u!4 &2098921453
 Transform:
   m_ObjectHideFlags: 0

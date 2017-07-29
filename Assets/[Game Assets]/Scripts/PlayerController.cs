@@ -5,9 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody2D _rigidBody;
-    Vector2 _initialGravity;
-    float _playerGravity;
-    float _targetGravity;
+    SpriteRenderer _sprite;
+    float _horizontalVelocity;
 
     [SerializeField]
     float _horizontalForce = 1f;
@@ -15,16 +14,37 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         this._rigidBody = GetComponent<Rigidbody2D>();
-        this._initialGravity = Physics2D.gravity;
+        this._sprite = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
-        this._rigidBody.position += ((Vector2.right * Input.GetAxis("Horizontal")) * this._horizontalForce) * Time.deltaTime;
-
-        if (Input.GetButtonDown("Fire1"))
+        if (GameManager.Instance.Input.Shoot.IsDown)
         {
             Physics2D.gravity *= -1;
+            this._sprite.flipY = !this._sprite.flipY;
         }
+
+        if (GameManager.Instance.Input.MoveLeft.IsPressed)
+        {
+            this._horizontalVelocity = -this._horizontalForce;
+            this._sprite.flipX = true;
+        }
+        else if (GameManager.Instance.Input.MoveRight.IsPressed)
+        {
+            this._horizontalVelocity = this._horizontalForce;
+            this._sprite.flipX = false;
+        }
+        else
+        {
+            this._horizontalVelocity = 0f;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        Vector2 currentVelocity = this._rigidBody.velocity;
+        currentVelocity.x = this._horizontalVelocity;
+        this._rigidBody.velocity = currentVelocity;
     }
 }
