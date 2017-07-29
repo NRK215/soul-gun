@@ -84,6 +84,8 @@ public class PlayerController : MonoBehaviour
 
     void CheckInputShoot()
     {
+        if (this.IsDead) return;
+
         if (GameManager.Instance.Input.Shoot.IsDown)
         {
             Physics2D.gravity *= -1;

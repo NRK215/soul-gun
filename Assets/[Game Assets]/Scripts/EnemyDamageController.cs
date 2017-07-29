@@ -7,17 +7,36 @@ using EX3.Framework.Components;
 public class EnemyDamageController : MonoBehaviour
 {
     [SerializeField]
-    int _damage;
+    int _damage = 1;
     [SerializeField]
-    string _targetTag;
+    string _targetTag = "Player";
     [SerializeField]
     string[] _ignoreTags;
     [SerializeField]
     bool _ignoreUntagged = false;
+    [SerializeField]
+    bool _ignoreSameTag = true;
 
     public delegate void OnCollisionEnterHandler(Collision2D collision);
 
     public OnCollisionEnterHandler OnCollision { get; set; }
+
+    private void Awake()
+    {
+        this._ignoreTags = new string[System.Convert.ToInt32(this._ignoreUntagged) + System.Convert.ToInt32(this._ignoreSameTag)];
+
+        int index = 0;
+        if (this._ignoreUntagged)
+        {
+            this._ignoreTags[index] = "Untagged";
+            index++;
+        }
+
+        if (this._ignoreSameTag)
+        {
+            this._ignoreTags[index] = this.tag;
+        }
+    }
 
     public void SetParams(string targetTag, int damage, params string[] ignoreTags)
     {
@@ -48,7 +67,6 @@ public class EnemyDamageController : MonoBehaviour
                 return true;
             }
         }
-
-        return this._ignoreUntagged && collision.gameObject.CompareTag("Untagged");
+        return false;
     }
 }
