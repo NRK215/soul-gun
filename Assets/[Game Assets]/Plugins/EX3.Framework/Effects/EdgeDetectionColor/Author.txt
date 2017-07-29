@@ -1,0 +1,4 @@
+Author: pmurph03
+Updated: Aug 1, 2016
+Published for Unity3D 5.4.0f3
+https://forum.unity3d.com/threads/image-effect-edge-detect-normals-colours-rel.310280/
