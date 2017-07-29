@@ -223,7 +223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &197295389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,6 +236,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 1
+  OnDeadEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!58 &197295390
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -262,7 +267,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.12566371
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -342,7 +347,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &297527975
 Transform:
   m_ObjectHideFlags: 0
@@ -947,6 +952,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 1
+  OnDeadEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &1491175220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -963,6 +973,11 @@ MonoBehaviour:
   _ignoreTags: []
   _ignoreUntagged: 1
   _ignoreSameTag: 1
+  OnCollisionEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!58 &1491175221
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -996,7 +1011,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1650545881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1013,6 +1028,11 @@ MonoBehaviour:
   _ignoreTags: []
   _ignoreUntagged: 1
   _ignoreSameTag: 1
+  OnCollisionEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!58 &1650545882
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1039,7 +1059,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.12566371
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3
@@ -1239,97 +1259,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 212887681560812154, guid: d41af3133d06b414ba2349a6687095a5,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 80c3dd0727b627c45929bbcfccb1298d,
-        type: 3}
-    - target: {fileID: 212887681560812154, guid: d41af3133d06b414ba2349a6687095a5,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 0.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 212887681560812154, guid: d41af3133d06b414ba2349a6687095a5,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 0.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 212887681560812154, guid: d41af3133d06b414ba2349a6687095a5,
-        type: 2}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1576282875418624, guid: d41af3133d06b414ba2349a6687095a5, type: 2}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4402848143652196, guid: d41af3133d06b414ba2349a6687095a5, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4402848143652196, guid: d41af3133d06b414ba2349a6687095a5, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4402848143652196, guid: d41af3133d06b414ba2349a6687095a5, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 61715435624535312, guid: d41af3133d06b414ba2349a6687095a5,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: 0.000000014901161
-      objectReference: {fileID: 0}
-    - target: {fileID: 61715435624535312, guid: d41af3133d06b414ba2349a6687095a5,
-        type: 2}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 61715435624535312, guid: d41af3133d06b414ba2349a6687095a5,
-        type: 2}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 61715435624535312, guid: d41af3133d06b414ba2349a6687095a5,
-        type: 2}
-      propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 0.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 61715435624535312, guid: d41af3133d06b414ba2349a6687095a5,
-        type: 2}
-      propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 0.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 61715435624535312, guid: d41af3133d06b414ba2349a6687095a5,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 0.3090525
-      objectReference: {fileID: 0}
-    - target: {fileID: 61715435624535312, guid: d41af3133d06b414ba2349a6687095a5,
-        type: 2}
-      propertyPath: m_Offset.x
-      value: -0.029454924
-      objectReference: {fileID: 0}
-    - target: {fileID: 61715435624535312, guid: d41af3133d06b414ba2349a6687095a5,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 0.2184342
-      objectReference: {fileID: 0}
-    - target: {fileID: 114371676412265666, guid: d41af3133d06b414ba2349a6687095a5,
-        type: 2}
-      propertyPath: _shootSpeed
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 4956701075578580, guid: d41af3133d06b414ba2349a6687095a5, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.058
-      objectReference: {fileID: 0}
-    - target: {fileID: 114371676412265666, guid: d41af3133d06b414ba2349a6687095a5,
-        type: 2}
-      propertyPath: _horizontalForce
-      value: 2.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d41af3133d06b414ba2349a6687095a5, type: 2}
   m_IsPrefabParent: 0
@@ -1349,7 +1278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2018615123
 Transform:
   m_ObjectHideFlags: 0

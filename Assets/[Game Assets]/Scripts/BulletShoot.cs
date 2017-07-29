@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using EX3.Framework;
 using EX3.Framework.Components;
+using UnityEngine.Events;
 
 public class BulletShoot : EnemyDamageController
 {
     InstantiableObject _instantiableObjectController;
+
+    public UnityEvent OnBulletCollisionEvent;
 
     private void Awake()
     {
@@ -16,6 +19,7 @@ public class BulletShoot : EnemyDamageController
 
     private void OnCollisionEvent(Collision2D collision)
     {
+        this.OnBulletCollisionEvent.Invoke();
         this._instantiableObjectController.Dispose();
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using EX3.Framework;
 using EX3.Framework.Components;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
@@ -33,6 +34,8 @@ public class PlayerController : MonoBehaviour
     float _shootLifeTime = 1f;
     [SerializeField]
     Transform _sourceShoot;
+
+    public UnityEvent OnDeadEvent;
 
     public bool IsDead { get; private set; }
 
@@ -104,6 +107,6 @@ public class PlayerController : MonoBehaviour
     void OnDead()
     {
         this.IsDead = true;
-        print("Dead player!");
+        this.OnDeadEvent.Invoke();
     }
 }

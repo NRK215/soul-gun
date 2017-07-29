@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using EX3.Framework;
 using EX3.Framework.Components;
+using UnityEngine.Events;
 
 public class EnemyDamageController : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class EnemyDamageController : MonoBehaviour
     bool _ignoreUntagged = false;
     [SerializeField]
     bool _ignoreSameTag = true;
+
+    public UnityEvent OnCollisionEvent;
 
     public delegate void OnCollisionEnterHandler(Collision2D collision);
 
@@ -54,6 +57,7 @@ public class EnemyDamageController : MonoBehaviour
 
         if (!this.CheckIgnoreTags(collision))
         {
+            this.OnCollisionEvent.Invoke();
             this.OnCollision?.Invoke(collision);
         }
     }

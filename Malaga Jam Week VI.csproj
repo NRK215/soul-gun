@@ -114,6 +114,7 @@
     <Compile Include="Assets\[Game Assets]\Plugins\EX3.Framework\Helper.cs" />
     <Compile Include="Assets\[Game Assets]\Plugins\EX3.Framework\Timer.cs" />
     <Compile Include="Assets\[Game Assets]\Scripts\BulletShoot.cs" />
+    <Compile Include="Assets\[Game Assets]\Scripts\CameraFollowPlayer.cs" />
     <Compile Include="Assets\[Game Assets]\Scripts\DamageController.cs" />
     <Compile Include="Assets\[Game Assets]\Scripts\EnemyDamageController.cs" />
     <Compile Include="Assets\[Game Assets]\Scripts\GameManager.cs" />
