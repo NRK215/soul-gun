@@ -11,7 +11,12 @@ public class DamageController : MonoBehaviour
     public int CurrentHealth { get; private set; }
 
     public System.Action<int> OnDamageReceived;
-    public System.Action OnDeath;
+    public System.Action OnDead;
+
+    private void Awake()
+    {
+        this.CurrentHealth = this._health;
+    }
 
     public void ApplyDamage(int damage)
     {
@@ -21,7 +26,7 @@ public class DamageController : MonoBehaviour
 
         if (this.CurrentHealth == 0)
         {
-            this.OnDeath?.Invoke();
+            this.OnDead?.Invoke();
         }
     }
 }

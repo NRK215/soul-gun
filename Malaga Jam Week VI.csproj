@@ -113,12 +113,25 @@
     <Compile Include="Assets\[Game Assets]\Plugins\EX3.Framework\FSM\Templates\FSMStateTemplate.cs" />
     <Compile Include="Assets\[Game Assets]\Plugins\EX3.Framework\Helper.cs" />
     <Compile Include="Assets\[Game Assets]\Plugins\EX3.Framework\Timer.cs" />
+    <Compile Include="Assets\[Game Assets]\Scripts\BulletShoot.cs" />
     <Compile Include="Assets\[Game Assets]\Scripts\DamageController.cs" />
+    <Compile Include="Assets\[Game Assets]\Scripts\EnemyDamageController.cs" />
     <Compile Include="Assets\[Game Assets]\Scripts\GameManager.cs" />
     <Compile Include="Assets\[Game Assets]\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\[Game Assets]\Scripts\PruebaOntrigger.cs" />
     <Compile Include="Assets\[Standard Assets]\Effects\ImageEffects\Scripts\PostEffectsBase.cs" />
+    <Compile Include="Assets\RainMaker\Demo\DemoScript.cs" />
+    <Compile Include="Assets\RainMaker\Demo\DemoScript2D.cs" />
+    <Compile Include="Assets\RainMaker\Demo\DemoScriptStartRainOnSpaceBar.cs" />
+    <Compile Include="Assets\RainMaker\Prefab\BaseRainScript.cs" />
+    <Compile Include="Assets\RainMaker\Prefab\RainCollision.cs" />
+    <Compile Include="Assets\RainMaker\Prefab\RainScript.cs" />
+    <Compile Include="Assets\RainMaker\Prefab\RainScript2D.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Platform Game Assets\Readme.txt" />
+    <None Include="Assets\RainMaker\Prefab\RainShader.shader" />
+    <None Include="Assets\RainMaker\Readme.txt" />
     <None Include="Assets\[Game Assets]\Plugins\EX3.Framework\Effects\EdgeDetectionColor\Author.txt" />
     <None Include="Assets\[Game Assets]\Plugins\EX3.Framework\Effects\EdgeDetectionColor\Shaders\EdgeDetectNormalsColor.shader" />
     <None Include="Assets\[Game Assets]\Plugins\EX3.Framework\Effects\LightShafts\ColorFilter.shader" />

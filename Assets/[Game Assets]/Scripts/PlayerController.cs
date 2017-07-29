@@ -6,9 +6,13 @@ using EX3.Framework.Components;
 
 public class PlayerController : MonoBehaviour
 {
+    readonly Quaternion _leftDirection = Quaternion.Euler(Vector2.up * 180f);
+    readonly Quaternion _rightDirection = Quaternion.Euler(Vector2.up);
+
     Rigidbody2D _rigidBody;
     SpriteRenderer _sprite;
     ObjectPool _shootsPool;
+    DamageController _damageController;
     Timer _timer;
 
     float _horizontalVelocity;
@@ -30,15 +34,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     Transform _sourceShoot;
 
+    public bool IsDead { get; private set; }
+
     private void Awake()
     {
         this._rigidBody = GetComponent<Rigidbody2D>();
         this._sprite = GetComponent<SpriteRenderer>();
         this._shootsPool = GetComponentInChildren<ObjectPool>();
+        this._damageController = GetComponent<DamageController>();
 
         this._timer = new Timer();
 
         this._shootsPool.MaxInstances = this._maxShoots;
+        this._damageController.OnDead = this.OnDead;
     }
 
     private void Update()
@@ -56,15 +64,17 @@ public class PlayerController : MonoBehaviour
 
     void UpdateMovement()
     {
+        if (this.IsDead) return;
+
         if (GameManager.Instance.Input.MoveLeft.IsPressed)
         {
             this._horizontalVelocity = -this._horizontalForce;
-            this._sprite.flipX = true;
+            this.transform.rotation = this._leftDirection;
         }
         else if (GameManager.Instance.Input.MoveRight.IsPressed)
         {
             this._horizontalVelocity = this._horizontalForce;
-            this._sprite.flipX = false;
+            this.transform.rotation = this._rightDirection;
         }
         else
         {
@@ -74,14 +84,24 @@ public class PlayerController : MonoBehaviour
 
     void CheckInputShoot()
     {
-        if (this._timer.Value >= this._shootCandence && GameManager.Instance.Input.Shoot.IsDown)
+        if (GameManager.Instance.Input.Shoot.IsDown)
         {
-            this._timer.Reset();
             Physics2D.gravity *= -1;
             this._sprite.flipY = !this._sprite.flipY;
 
-            var shoot = this._shootsPool.GetNewInstance(this._sourceShoot.position, Quaternion.identity, this._shootLifeTime);
-            shoot.GetComponent<Rigidbody2D>().AddForce(this._sourceShoot.right * this._shootSpeed, ForceMode2D.Impulse);
+            if (this._timer.Value >= this._shootCandence)
+            {
+                this._timer.Reset();
+                var shoot = this._shootsPool.GetNewInstance(this._sourceShoot.position, Quaternion.identity, this._shootLifeTime);
+                shoot?.GetComponent<BulletShoot>().SetParams("Enemy", this._shootDamage, "Player", "Shoot");
+                shoot?.GetComponent<Rigidbody2D>().AddForce(this._sourceShoot.right * this._shootSpeed, ForceMode2D.Impulse);
+            }
         }
+    }
+
+    void OnDead()
+    {
+        this.IsDead = true;
+        print("Dead player!");
     }
 }

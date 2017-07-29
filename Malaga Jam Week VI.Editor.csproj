@@ -163,8 +163,12 @@
     <Compile Include="Assets\[Game Assets]\Plugins\EX3.Framework\EditorExtensions\Editor\GameObject\3D Object\CreateCone.cs" />
     <Compile Include="Assets\[Game Assets]\Plugins\EX3.Framework\Effects\EdgeDetectionColor\Editor\EdgeDetectionColorsEditor.cs" />
     <Compile Include="Assets\[Game Assets]\Plugins\EX3.Framework\FSM\Editor\FSMAssetCreator.cs" />
+    <Compile Include="Assets\RainMaker\Editor\RainMakerEditor.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Platform Game Assets\Readme.txt" />
+    <None Include="Assets\RainMaker\Prefab\RainShader.shader" />
+    <None Include="Assets\RainMaker\Readme.txt" />
     <None Include="Assets\[Game Assets]\Plugins\EX3.Framework\Effects\EdgeDetectionColor\Author.txt" />
     <None Include="Assets\[Game Assets]\Plugins\EX3.Framework\Effects\EdgeDetectionColor\Shaders\EdgeDetectNormalsColor.shader" />
     <None Include="Assets\[Game Assets]\Plugins\EX3.Framework\Effects\LightShafts\ColorFilter.shader" />
