@@ -125,13 +125,13 @@ public class PlayerController : MonoBehaviour
         this.IsDead = true;
         this.OnDeadEvent?.Invoke();
 
-        Invoke("Reaparecer", 2f);
+        Invoke("Reaparecer", 2);
     }
 
     public void Reaparecer()
     {
         this.transform.position = this.ReSpawn.position;
-        GetComponent<SpriteRenderer>().enabled = true;
+        _sprite.enabled = true;
         this.particulas.SetActive(false);
         this.IsDead = false;
         this._damageController.CurrentHealth = this._damageController.MaxHealth;

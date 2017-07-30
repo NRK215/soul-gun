@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 61022430710091994}
   - component: {fileID: 114669703385441094}
   - component: {fileID: 114874133929159052}
+  - component: {fileID: 114172532653478528}
   m_Layer: 0
   m_Name: vamp
   m_TagString: Enemy
@@ -72,7 +73,7 @@ GameObject:
   - component: {fileID: 95727922640692468}
   m_Layer: 0
   m_Name: VampEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -217,8 +218,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1671537172611394}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50.533398, y: -0.16428518, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -31.371225, y: -1.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4974982324418994}
@@ -311,6 +312,27 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114172532653478528
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1316987306217190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2755c72b8b7c1b543acddc169014f9e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 1
+  _targetTag: Player
+  _ignoreTags: []
+  _ignoreUntagged: 0
+  _ignoreSameTag: 1
+  OnCollisionEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114669703385441094
 MonoBehaviour:
   m_ObjectHideFlags: 1

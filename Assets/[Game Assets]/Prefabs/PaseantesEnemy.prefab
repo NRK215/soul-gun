@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4661060880819688}
   - component: {fileID: 212552903125840136}
   - component: {fileID: 61315885916573830}
-  - component: {fileID: 50648253263965826}
   - component: {fileID: 114894705270219184}
   - component: {fileID: 114671843106929534}
+  - component: {fileID: 114161140928436162}
   m_Layer: 0
   m_Name: Paseante
   m_TagString: Enemy
@@ -219,7 +219,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1942436569643314}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.759, y: -0.681, z: 0}
+  m_LocalPosition: {x: 23.12, y: -1.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4661060880819688}
@@ -253,26 +253,6 @@ Transform:
   m_Father: {fileID: 4165808472349390}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50648253263965826
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1071775372780126}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 1
-  m_Mass: 0.06553601
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0.5
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &61315885916573830
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -332,6 +312,27 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114161140928436162
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1071775372780126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2755c72b8b7c1b543acddc169014f9e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 1
+  _targetTag: Player
+  _ignoreTags: []
+  _ignoreUntagged: 0
+  _ignoreSameTag: 1
+  OnCollisionEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114671843106929534
 MonoBehaviour:
   m_ObjectHideFlags: 1

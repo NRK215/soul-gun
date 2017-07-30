@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 61075900014151730}
   - component: {fileID: 50778910932148112}
   - component: {fileID: 114007341070947444}
+  - component: {fileID: 114859502610086996}
   m_Layer: 0
   m_Name: BalaTower
   m_TagString: Enemy
@@ -131,6 +132,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particulas: {fileID: 1695048547141732}
+--- !u!114 &114859502610086996
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1448047780135140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2755c72b8b7c1b543acddc169014f9e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 1
+  _targetTag: Player
+  _ignoreTags: []
+  _ignoreUntagged: 0
+  _ignoreSameTag: 1
+  OnCollisionEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!198 &198304326505782646
 ParticleSystem:
   m_ObjectHideFlags: 1
