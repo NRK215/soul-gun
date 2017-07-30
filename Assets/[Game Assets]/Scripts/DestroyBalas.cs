@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DestroyBalas : MonoBehaviour {
 
+
+   public GameObject particulas;
 	// Use this for initialization
 	void Start () {
 
@@ -18,7 +20,7 @@ public class DestroyBalas : MonoBehaviour {
    {
       Invoke("muerte", 2);
       GetComponent<SpriteRenderer>().enabled = false;
-
+      particulas.SetActive(true);
    }
 
 

@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour {
    public GameObject _Muerte;
    public GameObject visual;
    SpriteRenderer _visual;
+   PlayerController _PlayerController;
    public void Awake()
    {
       this._damageController = GetComponent<DamageController>();

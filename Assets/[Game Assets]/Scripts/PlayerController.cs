@@ -15,7 +15,10 @@ public class PlayerController : MonoBehaviour
     ObjectPool _shootsPool;
     DamageController _damageController;
     Timer _timer;
-
+   CameraFollowPlayer _CameraFollowPlayer;
+    public Transform ReSpawn;
+    public GameObject particulas;
+    
     float _horizontalVelocity;
 
     [SerializeField]
@@ -40,12 +43,12 @@ public class PlayerController : MonoBehaviour
     public bool IsDead { get; private set; }
 
     private void Awake()
-    {
+    {   
         this._rigidBody = GetComponent<Rigidbody2D>();
         this._sprite = GetComponent<SpriteRenderer>();
         this._shootsPool = GetComponentInChildren<ObjectPool>();
         this._damageController = GetComponent<DamageController>();
-
+        this._CameraFollowPlayer = GetComponent<CameraFollowPlayer>();
         this._timer = new Timer();
 
         this._shootsPool.MaxInstances = this._maxShoots;
@@ -104,9 +107,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+   public void Reaparecer()
+   {
+      transform.position = ReSpawn.position;
+      GetComponent<SpriteRenderer>().enabled = true;
+      particulas.SetActive(false);
+      IsDead = false;
+   }
+
     void OnDead()
     {
         this.IsDead = true;
         this.OnDeadEvent.Invoke();
+         
+      Invoke("Reaparecer", 2);
+      
+      
+      
+
     }
 }
