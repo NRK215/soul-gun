@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     ObjectPool _shootsPool;
     DamageController _damageController;
     Timer _timer;
-   CameraFollowPlayer _CameraFollowPlayer;
+    CameraFollowPlayer _CameraFollowPlayer;
     public Transform ReSpawn;
     public GameObject particulas;
     
