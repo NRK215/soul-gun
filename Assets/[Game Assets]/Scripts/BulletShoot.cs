@@ -19,7 +19,7 @@ public class BulletShoot : EnemyDamageController
 
     private void OnCollisionEvent(Collision2D collision)
     {
-        this.OnBulletCollisionEvent.Invoke();
+        this.OnBulletCollisionEvent?.Invoke();
         this._instantiableObjectController.Dispose();
     }
 }

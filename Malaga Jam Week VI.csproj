@@ -116,8 +116,11 @@
     <Compile Include="Assets\[Game Assets]\Scripts\BulletShoot.cs" />
     <Compile Include="Assets\[Game Assets]\Scripts\CameraFollowPlayer.cs" />
     <Compile Include="Assets\[Game Assets]\Scripts\DamageController.cs" />
+    <Compile Include="Assets\[Game Assets]\Scripts\EnemyBoxCrusherController.cs" />
+    <Compile Include="Assets\[Game Assets]\Scripts\EnemyController.cs" />
     <Compile Include="Assets\[Game Assets]\Scripts\EnemyDamageController.cs" />
     <Compile Include="Assets\[Game Assets]\Scripts\GameManager.cs" />
+    <Compile Include="Assets\[Game Assets]\Scripts\LifeEnergyBehaviour.cs" />
     <Compile Include="Assets\[Game Assets]\Scripts\PlayerController.cs" />
     <Compile Include="Assets\[Game Assets]\Scripts\PruebaOntrigger.cs" />
     <Compile Include="Assets\[Standard Assets]\Effects\ImageEffects\Scripts\PostEffectsBase.cs" />

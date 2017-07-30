@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody2D _rigidBody;
     SpriteRenderer _sprite;
+    Animator _animator;
     ObjectPool _shootsPool;
     DamageController _damageController;
     Timer _timer;
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour
     {
         this._rigidBody = GetComponent<Rigidbody2D>();
         this._sprite = GetComponent<SpriteRenderer>();
+        this._animator = GetComponent<Animator>();
         this._shootsPool = GetComponentInChildren<ObjectPool>();
         this._damageController = GetComponent<DamageController>();
 
@@ -73,15 +75,18 @@ public class PlayerController : MonoBehaviour
         {
             this._horizontalVelocity = -this._horizontalForce;
             this.transform.rotation = this._leftDirection;
+            this._animator.SetBool("Run", true);
         }
         else if (GameManager.Instance.Input.MoveRight.IsPressed)
         {
             this._horizontalVelocity = this._horizontalForce;
             this.transform.rotation = this._rightDirection;
+            this._animator.SetBool("Run", true);
         }
         else
         {
             this._horizontalVelocity = 0f;
+            this._animator.SetBool("Run", false);
         }
     }
 
@@ -97,9 +102,16 @@ public class PlayerController : MonoBehaviour
             if (this._timer.Value >= this._shootCandence)
             {
                 this._timer.Reset();
-                var shoot = this._shootsPool.GetNewInstance(this._sourceShoot.position, Quaternion.identity, this._shootLifeTime);
+                var shoot = this._shootsPool.GetNewInstance(this._sourceShoot.position, this._sourceShoot.rotation, this._shootLifeTime);
                 shoot?.GetComponent<BulletShoot>().SetParams("Enemy", this._shootDamage, "Player", "Shoot");
-                shoot?.GetComponent<Rigidbody2D>().AddForce(this._sourceShoot.right * this._shootSpeed, ForceMode2D.Impulse);
+                var rigidBody = shoot.GetComponent<Rigidbody2D>();
+                if (rigidBody)
+                {
+                    rigidBody.velocity = Vector2.zero;
+                    rigidBody.AddForce(this._sourceShoot.right * this._shootSpeed, ForceMode2D.Impulse);
+
+                    this._damageController.ApplyDamage(1);
+                }
             }
         }
     }
@@ -107,6 +119,6 @@ public class PlayerController : MonoBehaviour
     void OnDead()
     {
         this.IsDead = true;
-        this.OnDeadEvent.Invoke();
+        this.OnDeadEvent?.Invoke();
     }
 }

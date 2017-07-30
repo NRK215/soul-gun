@@ -52,12 +52,12 @@ public class EnemyDamageController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(this._targetTag))
         {
-            collision.gameObject.GetComponent<DamageController>()?.ApplyDamage(this._damage);
+            collision.gameObject.GetComponent<DamageController>()?.ApplyDamage(999);
         }
 
         if (!this.CheckIgnoreTags(collision))
         {
-            this.OnCollisionEvent.Invoke();
+            this.OnCollisionEvent?.Invoke();
             this.OnCollision?.Invoke(collision);
         }
     }

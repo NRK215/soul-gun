@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4960292996360362}
   - component: {fileID: 212219863568518294}
   - component: {fileID: 50516121639948916}
-  - component: {fileID: 114951984657586812}
   - component: {fileID: 61465147019011078}
+  - component: {fileID: 114088543111333486}
   m_Layer: 0
   m_Name: Caja
   m_TagString: Enemy
@@ -88,7 +88,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
---- !u!114 &114951984657586812
+--- !u!114 &114088543111333486
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -96,14 +96,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1571804263607400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2755c72b8b7c1b543acddc169014f9e5, type: 3}
+  m_Script: {fileID: 11500000, guid: 866dc066116df104b817046c0383a93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 1
-  _targetTag: Player
-  _ignoreTags: []
-  _ignoreUntagged: 1
-  _ignoreSameTag: 1
 --- !u!212 &212219863568518294
 SpriteRenderer:
   m_ObjectHideFlags: 1
