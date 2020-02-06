@@ -1,8 +1,8 @@
-# Malaga Jam Week VI Project #
+# Malaga Jam Week VI - Soul Gun #
 
 https://portfolio.visualstudioex3.com/2017/07/30/soul-gun/
 
-![Soul Gun intro](https://i0.wp.com/portfolio.visualstudioex3.com/wp-content/uploads/2017/08/SoulGunLD1.gif?resize=474%2C296) ![Soul Gun intro](https://i2.wp.com/portfolio.visualstudioex3.com/wp-content/uploads/2017/08/SoulGunLD2.gif?resize=474%2C296)
+![Soul Gun intro](https://i0.wp.com/portfolio.visualstudioex3.com/wp-content/uploads/2017/08/SoulGunLD1.gif?resize=474%2C296) ![Soul Gun gameplay](https://i2.wp.com/portfolio.visualstudioex3.com/wp-content/uploads/2017/08/SoulGunLD2.gif?resize=474%2C296)
 
 A game made for the [__Malaga Jam Weekend VI__](https://itch.io/jam/mjwvi) & [__Ludum Dare 39__](https://ldjam.com/events/ludum-dare/39) Game Jams. A game made in 48h!
 
